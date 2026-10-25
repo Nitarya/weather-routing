@@ -1,0 +1,105 @@
+@layer theme, base, mantine, components, utilities;
+@import "tailwindcss";
+@import "@mantine/core/styles.layer.css";
+@import "@mantine/dates/styles.layer.css";
+
+@theme {
+  --font-sans: "Inter Variable", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+
+  --color-ink-950: #031118;
+  --color-ink-900: #041820;
+  --color-ink-850: #061d26;
+  --color-ink-800: #08222b;
+  --color-ink-700: #0b2b35;
+  --color-brand: #40e0d0;
+  --color-brand-bright: #6ff5e5;
+  --color-pink: #f64673;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    @apply bg-ink-950 font-sans text-slate-100 antialiased;
+    margin: 0;
+    text-rendering: optimizeLegibility;
+  }
+
+  button,
+  input,
+  select {
+    font: inherit;
+  }
+
+  button:focus-visible,
+  input:focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--color-brand) 75%, transparent);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-brand) 30%, transparent);
+    color: white;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #1d4651 transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: #1d4651;
+    border-radius: 999px;
+  }
+}
+
+/* Google Maps InfoWindow chrome. */
+.gm-style .gm-style-iw-c {
+  padding: 0 !important;
+  border-radius: 14px !important;
+  background: #061b23 !important;
+  border: 1px solid rgba(64, 224, 208, 0.38) !important;
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.72),
+    0 0 0 1px rgba(0, 0, 0, 0.45) !important;
+}
+
+.gm-style .gm-style-iw-d {
+  overflow: hidden !important;
+}
+
+.gm-style .gm-style-iw-tc::after {
+  background: #061b23 !important;
+  box-shadow: 0 0 0 1px rgba(64, 224, 208, 0.2);
+}
+
+.gm-style .gm-ui-hover-effect {
+  top: 4px !important;
+  right: 4px !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+.gm-style .gm-ui-hover-effect > span {
+  background-color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+@keyframes weather-progress {
+  0% {
+    transform: translateX(-110%);
+  }
+  100% {
+    transform: translateX(360%);
+  }
+}

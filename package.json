@@ -1,0 +1,11 @@
+{
+  "name": "spotter-route",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Weather-aware truck routing — Spotter full-stack assessment",
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "test": ".venv/bin/python backend/manage.py test routing"
+  }
+}

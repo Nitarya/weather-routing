@@ -1,0 +1,16 @@
+{% load static %}<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="theme-color" content="#04151c" />
+    <meta name="description" content="Route Weather — weather-aware truck routing with checkpoint risk and a 48-hour corridor forecast." />
+    <title>Route Weather — Weather-aware truck routing</title>
+    {% for stylesheet in styles %}<link rel="stylesheet" href="{{ stylesheet }}" />{% endfor %}
+    {% for script in scripts %}<script type="module" src="{{ script }}"></script>{% endfor %}
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>Route Weather needs JavaScript enabled to draw the route map.</noscript>
+  </body>
+</html>
